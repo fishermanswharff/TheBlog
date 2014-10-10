@@ -3,7 +3,7 @@
   <%= link_to 'Create A New Article', new_article_path %>
 
   <h2><%= current_user.first_name == nil ? current_user.email : current_user.name %>'s articles:</h2>
-  <% @allarticles.all.each do |article| %>
+  <% @allarticles.each do |article| %>
     <section>
       <header>
         <h3><%= article.title %></h3> 

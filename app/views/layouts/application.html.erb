@@ -2,15 +2,27 @@
 <html>
 <head>
   <title>Blog</title>
+
+  <!-- Typekit fonts -->
+  <script src="//use.typekit.net/vum4rex.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <!-- Stylesheets -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <!-- Javascript -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- Meta tags -->
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<!-- nav bar  -->
 <%= render 'layouts/nav' %>
+<!-- devise flashes -->
 <%= render 'layouts/deviseflashes' %>
+
 <%= yield %>
 
+<!-- footer -->
+<%= render 'layouts/footer' %>
 </body>
 </html>

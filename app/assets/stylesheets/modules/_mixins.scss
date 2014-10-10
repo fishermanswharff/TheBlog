@@ -1,0 +1,9 @@
+@mixin defaults {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+@mixin align-right {
+  float: right;
+}

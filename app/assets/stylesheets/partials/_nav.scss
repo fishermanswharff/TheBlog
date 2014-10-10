@@ -1,0 +1,36 @@
+nav.navbar {
+  @include defaults;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $charcoal;
+  color: white;
+  width: 100%;
+  height: auto;
+
+  ul.nav {
+    @include defaults;
+    list-style:none;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 20px;
+
+      &.align-right { @include align-right } 
+
+      a { 
+        color: $white;
+        text-decoration: none;
+      }
+
+      ul {
+        display:none;
+
+        li {
+
+        }
+      }
+    }
+  }
+}
