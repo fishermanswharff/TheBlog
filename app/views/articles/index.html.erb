@@ -1,16 +1,22 @@
 <div class="grid_16">
-  <%= link_to 'Back', root_path, class: 'btn' %>
+  <%= link_to 'Back', 'home/index', class: 'btn' %>
   <%= link_to 'Create a new article', new_article_path, class: 'btn' %>
 </div>
 <% @articles.each do |article| %>
   <div class="grid_16">
-    <!-- <div class="grid_3"><#%= image_tag article.featured_image.url(:medium), class: 'blurb-thumbnail' %></div> -->
+    <div class="grid_2">
+      <% if article.featured_image != nil %>
+        <%= image_tag article.featured_image.url(:thumb), class: 'blurb-thumbnail' %>
+      <% else %>
+        ""
+      <% end %>
+    </div>
     <div class="grid_3">
       <h2><%= link_to article.title, article_path(article) %></h2>
       <small>Created on: <%= localize(article.created_at, :format => :long) %></small><br>
       <small>Last updated on: <%= localize(article.updated_at, :format => :long) %></small>
      </div>
-    <div class="grid_5">
+    <div class="grid_6">
       <p><%= truncate(article.body, length: 200, separator: ' ', omission: '...') %></p>
     </div>
     <div class="grid_5">

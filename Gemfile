@@ -16,7 +16,7 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'devise'
 gem 'closure_tree'
-
+gem 'hipchat'
 
 group :development, :test do
   gem 'pry-byebug'
