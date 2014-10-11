@@ -16,10 +16,11 @@ class Article < ActiveRecord::Base
   validates :title,presence: true
   has_attached_file :featured_image, 
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },
-                    :bucket => 'the-blog-bucket',
+                    :bucket => 'dubya-blog-bucket',
                     :s3_credentials => {
                       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
                       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
                     }
   validates_attachment_content_type :featured_image, :content_type => /\Aimage\/.*\Z/
 end
+

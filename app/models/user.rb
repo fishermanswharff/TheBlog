@@ -33,7 +33,7 @@ class User < ActiveRecord::Base
   has_many :articles
   has_attached_file :avatar, 
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },
-                    :bucket => 'the-blog-bucket',
+                    :bucket => 'dubya-blog-bucket',
                     :s3_credentials => {
                       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
                       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
