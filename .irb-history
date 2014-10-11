@@ -1,0 +1,67 @@
+def add(nums)
+puts nums
+end
+file
+file.read
+file = open('tmp.json')
+j_son = file.read
+j_son
+JSON.parse(json)
+j_son = File.read('tmp.json')
+JSON.parse(j_son)
+JSON.parse(j_son.chomp)
+JSON.parse(j_son, :quirks_mode => true)
+require 'json'
+JSON.parse(File.read('tmp.json'))
+string = "Whatever"
+cd "Whatever"
+cd ..
+ls
+ActiveRecord::Base.connection.table_exists? 'kittens'
+ActiveRecord::Base.connection.table_exists? 'users'
+drop_table :users
+drop_table(:users) if table_exists? :users
+drop_table(:users) if ActiveRecord::Base.connection.table_exists? :users
+quite
+ActiveRecord::Migrator.get_all_versions
+ActiveRecord::Migrator.current_version
+Comment.all
+Replies.all
+\q
+Reply.add
+Reply.all
+quit
+Article.first
+Article.last
+Article.all
+User.first
+current_user
+User.all
+User.current_user
+Course.all
+harry
+harry = Student.first
+SET_BUCKET_NAME='the-blog-bucket'
+S3_BUCKET_NAME="the-blog-bucket"
+AWS_ACCESS_KEY_ID="AKIAJYRUJ3CKOSZIED4Q"
+AWS_SECRET_ACCESS_KEY="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"
+ENV['S3_BUCKET_NAME']
+:s3_credentials
+;
+config:set S3_BUCKET_NAME='the-blog-bucket'
+config:set S3_BUCKET_NAME
+config
+config:set
+cleawr
+clear
+EXIT
+erxit
+history
+log
+cache.cleanup
+cache
+cache = ActiveSupport::Cache::MemoryStore.new
+cache.clear
+ENV.clear
+ENV
+exit

@@ -47,3 +47,9 @@
   width: auto;
   display: inline-block;
 }
+
+@mixin inline-list {
+  display: inline-block;
+  list-style: none;
+}
+

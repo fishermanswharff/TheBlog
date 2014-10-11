@@ -1,0 +1,2 @@
+.inline-list { @include defaults }
+.inline-list > li { @include inline-list }

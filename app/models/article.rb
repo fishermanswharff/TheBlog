@@ -14,6 +14,12 @@
 class Article < ActiveRecord::Base
   belongs_to :user
   validates :title,presence: true
-  has_attached_file :featured_image, :styles => { :large => "512x512", :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+  has_attached_file :featured_image, 
+                    :styles => { :medium => "300x300>", :thumb => "100x100>" },
+                    :bucket => 'the-blog-bucket',
+                    :s3_credentials => {
+                      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+                      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+                    }
   validates_attachment_content_type :featured_image, :content_type => /\Aimage\/.*\Z/
 end

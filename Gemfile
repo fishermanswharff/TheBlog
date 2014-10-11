@@ -13,8 +13,10 @@ gem 'unicorn'
 gem 'wysiwyg-rails'
 gem 'font-awesome-rails'
 gem 'paperclip'
+gem 'aws-sdk'
 gem 'devise'
 gem 'closure_tree'
+
 
 group :development, :test do
   gem 'pry-byebug'
