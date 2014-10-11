@@ -43,8 +43,6 @@ GEM
     bcrypt (3.1.7)
     binding_of_caller (0.7.3.pre1)
       debug_inspector (>= 0.0.1)
-    bootstrap-sass (3.2.0.2)
-      sass (~> 3.2)
     builder (3.2.2)
     byebug (3.5.1)
       columnize (~> 0.8)
@@ -203,7 +201,6 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  bootstrap-sass
   closure_tree
   coffee-rails (~> 4.0.0)
   devise

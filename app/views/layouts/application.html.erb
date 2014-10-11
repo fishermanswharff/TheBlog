@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Blog</title>
+  <title>The Blog</title>
 
   <!-- Typekit fonts -->
   <script src="//use.typekit.net/vum4rex.js"></script>
@@ -9,20 +9,29 @@
 
   <!-- Stylesheets -->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+
   <!-- Javascript -->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
   <!-- Meta tags -->
   <%= csrf_meta_tags %>
 </head>
+
 <body>
-<!-- nav bar  -->
-<%= render 'layouts/nav' %>
-<!-- devise flashes -->
-<%= render 'layouts/deviseflashes' %>
 
-<%= yield %>
+  <!-- nav bar  -->
+  <%= render 'layouts/nav' %>
 
-<!-- footer -->
-<%= render 'layouts/footer' %>
+  <!-- devise flashes -->
+  <%= render 'layouts/deviseflashes' %>
+  
+  <!-- main-content -->
+  <div id="main-content" class="container">
+    <%= yield %>    
+  </div>
+
+  <!-- footer -->
+  <%= render 'layouts/footer' %>
+
 </body>
 </html>

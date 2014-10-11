@@ -1,0 +1,8 @@
+a.btn {
+  @include button($cobalt, $white, 4px);
+  &.btn-primary { }
+  &.btn-success {  }
+  &.btn-warning {  }
+  &.btn-info {  }
+  &.btn-default {  }
+}

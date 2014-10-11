@@ -1,17 +1,49 @@
-<% if user_signed_in? %>
-  <%= link_to 'All Articles', articles_path   %>
-  <%= link_to 'Create A New Article', new_article_path %>
+<div class="row">
+  <div class="grid_16">
+    <%= link_to 'All Articles', articles_path, class: 'btn btn-primary'   %>
+    <%= link_to 'Create A New Article', new_article_path, class: 'btn btn-primary' %>   
+  </div>
+</div>
 
-  <h2><%= current_user.first_name == nil ? current_user.email : current_user.name %>'s articles:</h2>
-  <% @allarticles.each do |article| %>
-    <section>
-      <header>
-        <h3><%= article.title %></h3> 
-      </header>
-      <p><%= article.category %></p>
-    </section>
+<div class="grid_4">
+  <!-- All users -->
+  <h2>All users: </h2>
+  <ul> 
+    <% @users.each do |user| %>
+    <li><%= user.username ? user.username : user.email %></li>
+    <% end %>
+  </ul>
+
+  <!-- Recent users (signed in over the last 24 hours) -->
+  <h2>Recent Users</h2>
+  <ul>
+    <% @recent_users.each do |user| %>
+      <li><%= user.email %><br>
+        <small>Last signed in: <%= localize(user.last_sign_in_at, :format => :short) %></small>
+      </li>
+    <% end %>
+  </ul>
+
+  <!-- User articles -->
+  <h2>Articles by user</h2>
+  <% @user_articles.each do |articles| %>
+    <% if articles.length > 0 %>
+      <h4><%= get_author(articles[0].user_id) %></h4>
+      <%  articles.each do |article|  %>
+      <ul>
+        <li><%= link_to article.title, article_path(article.id) %></li>
+      </ul>
+      <% end %>
+    <% end %>
   <% end %>
+</div>
 
-<% else %>
-  <%= link_to('All posts', articles_path)  %>
-<% end %>
+<div class="grid_12">
+  <% @allarticles.each do |article| %>  
+  <div class="grid_4">
+    <h3><%= article.title %></h3>
+    <%= image_tag article.featured_image.url(:medium), class: 'blurb-thumbnail' %>
+    <p><%= article.category %></p>  
+  </div>
+  <% end %>
+</div>

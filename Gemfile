@@ -15,7 +15,6 @@ gem 'font-awesome-rails'
 gem 'paperclip'
 gem 'devise'
 gem 'closure_tree'
-gem 'bootstrap-sass'
 
 group :development, :test do
   gem 'pry-byebug'

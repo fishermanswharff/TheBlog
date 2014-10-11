@@ -1,18 +1,32 @@
 /*—————————————————————————————————————————
+*****************Z-Index********************
+——————————————————————————————————————————*/
+$z-body: 0;
+$z-nav: 1;
+
+/*—————————————————————————————————————————
 *****************Colors********************
 ——————————————————————————————————————————*/
-
-$white: #ffffff;
+// gray scale
 $black: #000000;
+$black-90: #414042;
+$black-80: #58595b;
+$black-70: #6d6e71;
+$black-60: #808184;
+$black-50: #929497;
+$black-40: #a6a8ab;
+$black-30: #bbbdbf;
+$black-20: #d0d2d3;
+$black-10: #e5e6e7;
+$white: #ffffff;
 
+// colors
 $cobalt: #00b3b8;
 $charcoal: #564757;
-
 
 /*——————————————————————————————————————————
 ***************TYPOGRAPHY*****************
 ——————————————————————————————————————————*/
-
 $header-font: "proxima-nova-soft", Helvetica, Arial, sans-serif;
 $body-font: "freight-sans-pro", Helvetica, Arial, sans-serif;
 
@@ -23,3 +37,4 @@ $xxlarge-font-size: 2em;
 
 $base-line-height: 20px;
 $large-line-height: 24px;
+

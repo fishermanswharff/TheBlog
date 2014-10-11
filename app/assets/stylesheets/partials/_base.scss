@@ -1,4 +1,7 @@
 body {
   @include defaults;
   padding-top: 60px;
+
+  #container.main-content { z-index: $z-body; }
+  
 }
