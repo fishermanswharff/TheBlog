@@ -8,5 +8,6 @@
 /log/*.log
 /tmp
 /docs
-config/aws.yml
-.irb-history
+/config/aws.yml
+/.irb-history
+/.irb_history
