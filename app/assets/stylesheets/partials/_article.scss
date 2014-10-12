@@ -58,3 +58,16 @@
     display:none;
   }
 }
+
+.show {
+  margin-top: 60px;
+
+  .article-content {
+    img.featured-image {
+      max-width: 100%;
+    }
+  }
+  .sidebar {
+    margin-top: 60px;
+  }
+}

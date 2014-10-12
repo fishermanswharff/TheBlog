@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="grid_4">
+<div class="container home-index">
+  <div class="grid_4 sidebar">
     <!-- All users -->
     <h2>All users: </h2>
     <ul> 
@@ -32,11 +32,17 @@
     <% end %>
   </div>
 
-  <div class="grid_12">
+  <div class="grid_12 grid-container">
     <% @allarticles.each do |article| %>  
-    <div class="grid_4">
-      <h3><%= article.title %></h3>
+    <div class="grid_4 grid-item">
+    <%= link_to(article_path(article)) do %>
       <%= image_tag article.featured_image.url(:medium), class: 'blurb-thumbnail' %>
+      <div class="article-meta">
+        <h3><%= article.title %></h3>
+        <small>Last updated on: <%= localize(article.updated_at, :format => :short) %></small><br>
+        <small>Created on: <%= localize(article.created_at, :format => :short) %></small>  
+      </div>
+    <% end %>  
     </div>
     <% end %>
   </div>  

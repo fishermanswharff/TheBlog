@@ -1,13 +1,14 @@
-<div class="container">
-  <div class="col-md-8">
+<div class="container show">
+  <div class="grid_12 article-content">
     <h1><%= @article.title %></h1>
     <div class="article-content">
       <%= image_tag @article.featured_image.url, class: 'featured-image' %>
       <%= simple_format(@article.body)  %>
-      <p>Authored by: <% if @user.username %><%= @user.username %><% else %><%= @user.email%><% end %></p>
+      
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="grid_4 sidebar">
+    <p>Authored by: <% if @user.username %><%= @user.username %><% else %><%= @user.email%><% end %></p>
     <p><small>Created on <%= time_tag @article.created_at, pubdate: true %></small></p>
   </div>
 
