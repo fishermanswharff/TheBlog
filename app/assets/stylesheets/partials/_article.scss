@@ -59,7 +59,7 @@
   }
 }
 
-.show {
+.show-article {
   margin-top: 60px;
 
   .article-content {
@@ -70,4 +70,8 @@
   .sidebar {
     margin-top: 60px;
   }
+}
+
+.edit-article, .new-article {
+  margin-top: 80px;
 }

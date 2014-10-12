@@ -1,0 +1,7 @@
+<h4>Add a category</h4>
+<%= form_for([@article, @article.categories.build]) do |f| %>
+  <p>
+    <%= f.label :label %><br>
+    <%= f.text_field :label %>
+  </p>
+<% end %>

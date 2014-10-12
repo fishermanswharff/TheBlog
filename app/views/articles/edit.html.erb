@@ -1,9 +1,14 @@
-<div class="container">
-  <h1>Editing Article: <small>(make sure to save your work)</small></h1>
-  <%=  render 'form' %>
-  <hr>
+<div class="container edit-article">
   <ul class="inline-list">
     <li><%= link_to 'Back', article_path, class: 'btn btn-primary' %></li>
     <li><%= link_to 'Home', root_path, class: 'btn btn-primary' %>  </li>
   </ul>
+  <h1>Editing Article: <small>(make sure to save your work)</small></h1>
+  <%=  render 'form' %>
+  <hr>
+  <% @article.categories.each do |tag| %>
+    <a class="btn btn-info tag" href="#"><%= categories.label %></a>
+  <% end %>
+  <%= render 'categories/form' %>
+
 </div>

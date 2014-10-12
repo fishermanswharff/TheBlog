@@ -1,5 +1,5 @@
-<div class="container show">
-  <div class="grid_12 article-content">
+<div class="container show-article">
+  <div class="grid_12 alpha article-content">
     <h1><%= @article.title %></h1>
     <div class="article-content">
       <%= image_tag @article.featured_image.url, class: 'featured-image' %>
@@ -7,17 +7,21 @@
       
     </div>
   </div>
-  <div class="grid_4 sidebar">
+  <div class="grid_4 omega sidebar">
     <p>Authored by: <% if @user.username %><%= @user.username %><% else %><%= @user.email%><% end %></p>
     <p><small>Created on <%= time_tag @article.created_at, pubdate: true %></small></p>
   </div>
-
+  <% @article.categories.each do |category| %>
+    <a class="btn btn-info tag" href="#"><%= category.label %></a>
+  <% end %>
+  <%= render 'categories/form' %>
 </div>
 <div class="container">
   <div class="grid_16">
       <ul class="inline-list">
-        <li><%= link_to 'Back', articles_path, class: 'btn btn-primary' %></li>
+        <% if @article.user_id == current_user.id %>
         <li><%= link_to 'Edit', edit_article_path, class: 'btn btn-primary' %></li>
+        <% end %>
         <li><%= link_to 'Home', root_path, class: 'btn btn-primary' %></li>
       </ul>
     </div>

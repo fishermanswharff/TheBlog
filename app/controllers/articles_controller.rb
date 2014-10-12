@@ -46,10 +46,15 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    if @article.update(article_params)
-      redirect_to @article
-    else
+    if @article.user_id == current_user.id
+      if @article.update(article_params)
+        redirect_to @article
+      else
       render 'edit'
+      end
+    else 
+      redirect_to @article
+      flash[:alert] = "You can only edit your own articles"
     end
   end
 
@@ -64,6 +69,6 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
     end
     def article_params
-      params.require(:article).permit(:title,:body, :featured_image)
+      params.require(:article).permit(:title, :body, :featured_image, :category)
     end
 end
