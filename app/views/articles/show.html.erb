@@ -3,8 +3,9 @@
     <h1><%= @article.title %></h1>
     <div class="article-content">
       <%= image_tag @article.featured_image.url, class: 'featured-image' %>
-      <%= simple_format(@article.body)  %>
-      
+      <div class="article-body">
+        <%= simple_format(@article.body)  %>  
+      </div>
     </div>
   </div>
   <div class="grid_4 omega sidebar">
@@ -19,10 +20,12 @@
 <div class="container">
   <div class="grid_16">
       <ul class="inline-list">
-        <% if @article.user_id == current_user.id %>
-        <li><%= link_to 'Edit', edit_article_path, class: 'btn btn-primary' %></li>
+        <% if user_signed_in? %>
+          <% if @article.user_id == current_user.id %>
+          <li><%= link_to 'Edit', edit_article_path, class: 'btn btn-primary' %></li>
+          <% end %>
+          <li><%= link_to 'Home', root_path, class: 'btn btn-primary' %></li>
         <% end %>
-        <li><%= link_to 'Home', root_path, class: 'btn btn-primary' %></li>
       </ul>
     </div>
 </div>
