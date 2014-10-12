@@ -1,20 +1,32 @@
-<% @articles.each do |article| %>
-  <div class="grid_16">
-    <div class="grid_2">
-      <% if article.featured_image != nil %>
-        <%= image_tag article.featured_image.url(:thumb), class: 'blurb-thumbnail' %>
-      <% else %>
-        ""
-      <% end %>
-    </div>
-    <div class="grid_3">
-      <h2><%= link_to article.title, article_path(article) %></h2>
-      <small>Created on: <%= localize(article.created_at, :format => :long) %></small><br>
-      <small>Last updated on: <%= localize(article.updated_at, :format => :long) %></small>
-     </div>
-    <div class="grid_6">
-      <%= content_tag(:p, article.body.gsub(/<\/?\w+((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[^'">\s]+))?)+\s*|\s*)\/?>/, ""), :class => "article-blurb") %>
-    </div>
+<div class="slider">
+
+  <!-- slider container  -->
+  <div class="slider-container autoplay">
+    <div class="slider-photos"></div>
+    <div class="slider-captions container">
+        <div class="caption-content grid_5"></div>
+      </div>
+    <div class="slider-nav"></div>
   </div>
-  <hr>
-<% end %>
+
+
+  <div class="slides">
+    <!-- render each post -->
+    <% @articles.each do |article| %>
+      <div class="slide">
+        <% if article.featured_image %>
+          <%= image_tag article.featured_image.url(), class: 'featured-image' %>
+        <% end %>
+        <div class="grid_5 slide-caption">
+          <h2><%= link_to article.title, article_path(article) %></h2>
+          <%= content_tag(:p, article.body.gsub(/<\/?\w+((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[^'">\s]+))?)+\s*|\s*)\/?>/, ""), :class => "article-blurb") %>
+          <p>
+            <small>Last updated on: <%= localize(article.updated_at, :format => :long) %></small><br>
+            <small>Created on: <%= localize(article.created_at, :format => :long) %></small>
+          </p>
+        </div>  
+      </div>
+    <% end %>  
+  </div>
+  
+</div>

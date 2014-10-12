@@ -13,6 +13,7 @@
 
 class Article < ActiveRecord::Base
   belongs_to :user
+  has_many :categories
   validates :title,presence: true
   has_attached_file :featured_image, 
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },

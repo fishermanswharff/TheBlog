@@ -1,42 +1,43 @@
-<div class="grid_4">
-  <!-- All users -->
-  <h2>All users: </h2>
-  <ul> 
-    <% @users.each do |user| %>
-    <li><%= user.username ? user.username : user.email %></li>
-    <% end %>
-  </ul>
+<div class="container">
+  <div class="grid_4">
+    <!-- All users -->
+    <h2>All users: </h2>
+    <ul> 
+      <% @users.each do |user| %>
+      <li><%= user.username ? user.username : user.email %></li>
+      <% end %>
+    </ul>
 
-  <!-- Recent users (signed in over the last 24 hours) -->
-  <h2>Recent Users</h2>
-  <ul>
-    <% @recent_users.each do |user| %>
-      <li><%= user.email %><br>
-        <small>Last signed in: <%= localize(user.last_sign_in_at, :format => :short) %></small>
-      </li>
-    <% end %>
-  </ul>
+    <!-- Recent users (signed in over the last 24 hours) -->
+    <h2>Recent Users</h2>
+    <ul>
+      <% @recent_users.each do |user| %>
+        <li><%= user.email %><br>
+          <small>Last signed in: <%= localize(user.last_sign_in_at, :format => :short) %></small>
+        </li>
+      <% end %>
+    </ul>
 
-  <!-- User articles -->
-  <h2>Articles by user</h2>
-  <% @user_articles.each do |articles| %>
-    <% if articles.length > 0 %>
-      <h4><%= get_author(articles[0].user_id) %></h4>
-      <%  articles.each do |article|  %>
-      <ul>
-        <li><%= link_to article.title, article_path(article.id) %></li>
-      </ul>
+    <!-- User articles -->
+    <h2>Articles by user</h2>
+    <% @user_articles.each do |articles| %>
+      <% if articles.length > 0 %>
+        <h4><%= get_author(articles[0].user_id) %></h4>
+        <%  articles.each do |article|  %>
+        <ul>
+          <li><%= link_to article.title, article_path(article.id) %></li>
+        </ul>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</div>
-
-<div class="grid_12">
-  <% @allarticles.each do |article| %>  
-  <div class="grid_4">
-    <h3><%= article.title %></h3>
-    <%= image_tag article.featured_image.url(:medium), class: 'blurb-thumbnail' %>
-    <p><%= article.category %></p>  
   </div>
-  <% end %>
+
+  <div class="grid_12">
+    <% @allarticles.each do |article| %>  
+    <div class="grid_4">
+      <h3><%= article.title %></h3>
+      <%= image_tag article.featured_image.url(:medium), class: 'blurb-thumbnail' %>
+    </div>
+    <% end %>
+  </div>  
 </div>

@@ -1,5 +1,60 @@
-.prevent-overflow {
-  max-height: 150px;
-  overflow:hidden;
-  
+.slider {
+
+  z-index: $z-body;
+
+  .slider-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0 0 30px 0;
+    padding: 0;
+
+    .slider-photos {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: none;
+      img.slider-photo { width: 100vw; height: auto; }
+    }
+
+    .slider-captions {
+      padding: 15px 0 10px 0;
+      box-sizing: border-box;
+      position: absolute;
+      top: 200px;
+      left: 100px;
+      @include transition(all, 0.5s, ease, 0);
+
+      &.show { opacity: 1 }
+      .caption-content {
+        box-sizing: border-box;
+        padding: 20px;
+        border-radius: 10px;
+        background: rgba(255,255,255,0.8);
+      }
+    }
+
+    .slider-nav {
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      display: block;
+      margin: 0 auto;
+      bottom: 50px;
+
+      a {
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-left: 15px;
+        cursor: pointer;
+        background: #999;
+      }
+    }
+  }
+
+  .slide {
+    display:none;
+  }
 }
