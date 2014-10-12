@@ -6,8 +6,8 @@
   <h1>Editing Article: <small>(make sure to save your work)</small></h1>
   <%=  render 'form' %>
   <hr>
-  <% @article.categories.each do |tag| %>
-    <a class="btn btn-info tag" href="#"><%= categories.label %></a>
+  <% @article.categories.each do |category| %>
+    <a class="btn btn-info tag" href="#"><%= category.label %></a>
   <% end %>
   <%= render 'categories/form' %>
 
