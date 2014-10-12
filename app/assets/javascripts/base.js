@@ -33,18 +33,11 @@ ready = function() {
     $("p.notice.notification").removeClass('active') ;
   }
 
-  function countChar(val) {
-    var len = val.value.length;
-    if (len >= 500) {
-      val.value = val.value.substring(0, 500);
-    } else {
-      $('#charNum').text(500 - len);
-    }
-  };
-
   $(".article-blurb").each(function(i,blurb){
-    if ($(blurb).html().length > 100) {
-      $(blurb).parent().addClass("prevent-overflow");
+    if ($(blurb).html().length > 250) {
+      var blurb = $(this).html().substring(0,250)+'...';
+      var text = $(this).text();
+      $(this).html(blurb);
     } else {}
   });
 
