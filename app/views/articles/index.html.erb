@@ -13,15 +13,8 @@
       <small>Last updated on: <%= localize(article.updated_at, :format => :long) %></small>
      </div>
     <div class="grid_6">
-      <p><%= truncate(article.body, length: 200, separator: ' ', omission: '...') %></p>
+      <%= content_tag(:p, article.body.gsub(/<\/?\w+((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[^'">\s]+))?)+\s*|\s*)\/?>/, ""), :class => "article-blurb") %>
     </div>
-    <!-- <div class="grid_5">
-      <ul class="inline-list">
-        <li><#%= link_to 'Show', article_path(article), class: 'btn btn-primary btn-xs' %></li>
-        <li><#%= link_to 'Edit', edit_article_path(article), class: 'btn btn-primary btn-xs' %></li>
-        <li><#%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary btn-xs' %></li>
-      </ul>
-    </div> -->
   </div>
   <hr>
-<% end %>  
+<% end %>

@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
     
     # return all the articles sorted by most recently updated
     @articles = Article.all.sort_by { |article| article.updated_at }.reverse
-
   end
 
   def new

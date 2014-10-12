@@ -1,2 +1,5 @@
-.inline-list { @include defaults }
-.inline-list > li { @include inline-list }
+.prevent-overflow {
+  max-height: 150px;
+  overflow:hidden;
+  
+}
