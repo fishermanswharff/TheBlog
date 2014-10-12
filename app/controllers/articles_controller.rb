@@ -6,15 +6,18 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: [:show,:edit,:update,:destroy]
 
   def index 
-    
-    # find the user of the article instance
-    @user = User.find_by(params[:user_id])
-    
-    # assign all the users articles into an array
-    @user_articles = @user.articles.all
-    
-    # return all the articles sorted by most recently updated
-    @articles = Article.all.sort_by { |article| article.updated_at }.reverse
+    if User.all.length == 0
+      redirect_to new_user_registration_path
+    else
+      # find the user of the article instance
+      @user = User.find_by(params[:user_id])
+      
+      # assign all the users articles into an array
+      @user_articles = @user.articles.all
+      
+      # return all the articles sorted by most recently updated
+      @articles = Article.all.sort_by { |article| article.updated_at }.reverse
+    end
   end
 
   def new
