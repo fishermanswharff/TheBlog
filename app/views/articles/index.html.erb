@@ -1,7 +1,3 @@
-<div class="grid_16">
-  <%= link_to 'Back', 'home/index', class: 'btn' %>
-  <%= link_to 'Create a new article', new_article_path, class: 'btn' %>
-</div>
 <% @articles.each do |article| %>
   <div class="grid_16">
     <div class="grid_2">
@@ -19,13 +15,13 @@
     <div class="grid_6">
       <p><%= truncate(article.body, length: 200, separator: ' ', omission: '...') %></p>
     </div>
-    <div class="grid_5">
+    <!-- <div class="grid_5">
       <ul class="inline-list">
-        <li><%= link_to 'Show', article_path(article), class: 'btn btn-primary btn-xs' %></li>
-        <li><%= link_to 'Edit', edit_article_path(article), class: 'btn btn-primary btn-xs' %></li>
-        <li><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary btn-xs' %></li>
+        <li><#%= link_to 'Show', article_path(article), class: 'btn btn-primary btn-xs' %></li>
+        <li><#%= link_to 'Edit', edit_article_path(article), class: 'btn btn-primary btn-xs' %></li>
+        <li><#%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-primary btn-xs' %></li>
       </ul>
-    </div>
+    </div> -->
   </div>
   <hr>
 <% end %>  

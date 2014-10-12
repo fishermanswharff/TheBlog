@@ -9,6 +9,19 @@ ready = function() {
     inlineMode: false,
     height: 400
   });
+
+  if ($(".notice.notification").html().match(/[\w]+/) != null) {
+    $("p.notice.notification").addClass('active');
+    setTimeout(function(){
+      $("p.notice.notification").animate({
+        opacity: 0
+      });
+    },2000);
+  } 
+  else {
+    $("p.notice.notification").removeClass('active') ;
+  }
+
 };
 
 $(document).ready(ready);

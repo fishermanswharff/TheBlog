@@ -3,14 +3,17 @@
     <ul class="nav">
       <li class=""><%= link_to 'WDI Boston Fall ''14', root_path %></li>
       <% if user_signed_in? %>
-      <li class="user-signed-in align-right"><%= link_to current_user.username == nil ? current_user.email : current_user.username, '#', class: "dropdown-toggle", data: { toggle: 'dropdown' } %>
+      <li class="user-signed-in align-right"><span>Logged In As: </span><%= link_to current_user.username == nil ? current_user.email : current_user.username, '#', class: "dropdown-toggle", data: { toggle: 'dropdown' } %>
         <ul class="dropdown">
           <li><%= link_to('Edit Profile', edit_user_registration_path) %></li>
-          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete, class: '') %> </li>
+          <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %> </li>
         </ul>
       </li>
+      <li  class='align-right'><%= link_to(current_user.username ? current_user.username + "'s Articles" : current_user.email + "'s Articles", home_index_path) %></li>
+      <li class='align-right'><%= link_to 'Create A New Article', new_article_path %> </li>
       <% else %>
       <li class="align-right"><%= link_to('Login', new_user_session_path)  %></li>
+
       <% end %>
     </ul>  
   </div>

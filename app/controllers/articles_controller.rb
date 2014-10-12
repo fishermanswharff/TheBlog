@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-
+    @user = User.find(@article.user_id)
   end
 
   def edit 

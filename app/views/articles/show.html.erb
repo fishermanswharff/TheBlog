@@ -5,14 +5,13 @@
     <div class="article-content">
       <%= image_tag @article.featured_image.url, class: 'featured-image' %>
       <%= simple_format(@article.body)  %>
-      <%= @article.user_id %>
+      <p>Authored by: <% if @user.username %><%= @user.username %><% else %><%= @user.email%><% end %></p>
     </div>
   </div>
   <div class="col-md-4">
     
   </div>
 </div>
-<hr>
 <div class="container">
   <div class="row">
     <div class="col-md-8">
@@ -22,8 +21,7 @@
       
     </div>
   </div>
-  <hr>
-  <ul class="list-inline">
+  <ul class="inline-list">
     <li><%= link_to 'Back', articles_path, class: 'btn btn-primary' %></li>
     <li><%= link_to 'Edit', edit_article_path, class: 'btn btn-primary' %></li>
     <li><%= link_to 'Home', root_path, class: 'btn btn-primary' %></li>
