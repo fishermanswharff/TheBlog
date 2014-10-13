@@ -58,6 +58,29 @@
         background: #999;
       }
     }
+
+    .slider-step {
+      position: relative;
+      top: 300px;
+      width: 100%;
+      a.slider-nav-prev, a.slider-nav-next { 
+        background: #fff;
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+        text-align: center;
+        text-decoration: none;
+        span { font-size: 35px; font-family: $header-font; }
+      }
+      a.slider-nav-prev {
+        float: left;
+        margin-left: 30px;
+      }
+      a.slider-nav-next {
+        float: right;
+        margin-right: 30px;
+      }
+    }
   }
 
   .slide {

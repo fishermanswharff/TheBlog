@@ -1,0 +1,15 @@
+<div class="container category-search-results">
+  <div class="grid_8">
+  <h2>Search results for: <%= @search_query %></h2>
+    <% if @matches.length > 0 %>
+      <% @articles.each do |article| %>
+      <div class="grid_8">
+        <h2><%= link_to article.title, article_path(article) %></h2>
+        <%= content_tag(:p, article.body.gsub(/<\/?\w+((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[^'">\s]+))?)+\s*|\s*)\/?>/, " "), :class => "article-blurb") %>
+      </div>
+      <% end %>
+    <% elsif @articles == nil %>
+    <%= "Your search did not return any results" %>
+    <% end %>
+  </div>
+</div>

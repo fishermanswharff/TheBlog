@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :categories
   end
   get 'home/index'
+  get 'categories/show'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

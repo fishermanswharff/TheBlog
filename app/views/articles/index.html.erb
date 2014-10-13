@@ -4,9 +4,13 @@
   <div class="slider-container autoplay">
     <div class="slider-photos"></div>
     <div class="slider-captions container">
-        <div class="caption-content grid_5"></div>
-      </div>
+      <div class="caption-content grid_5"></div>
+    </div>
     <div class="slider-nav"></div>
+    <div class="slider-step">
+      <!-- <a href="#" title="" class="slider-nav-prev"><span class="prev">&lt;</span></a>
+      <a href="#" title="" class="slider-nav-next"><span class="next">&gt;</span></a>   -->
+    </div>
   </div>
   <div class="slides">
     <% @articles.each do |article| %>
@@ -19,10 +23,13 @@
             <h2><%= article.title %></h2>
             <p>By: <%= User.find(article.user_id).username ? User.find(article.user_id).username : User.find(article.user_id).email %></p>
             <%= content_tag(:p, article.body.gsub(/<\/?\w+((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[^'">\s]+))?)+\s*|\s*)\/?>/, " "), :class => "article-blurb") %>
-            <p>
-              <small>Last updated on: <%= localize(article.updated_at, :format => :long) %></small><br>
-              <small>Created on: <%= localize(article.created_at, :format => :long) %></small>
-            </p>
+            <% article.categories.each do |category| %>
+              <a class="btn btn-default btn-small tag" href="#"><%= category.label %></a>
+            <% end %>
+            <!-- <p>
+              <small>Last updated on: <#%= localize(article.updated_at, :format => :long) %></small><br>
+              <small>Created on: <#%= localize(article.created_at, :format => :long) %></small>
+            </p> -->
             <% end %>
           </div>
       </div>

@@ -4,5 +4,6 @@ a.btn {
   &.btn-success {  }
   &.btn-warning {  }
   &.btn-info {  }
-  &.btn-default {  }
+  &.btn-default { background-color: $white; }
+
 }

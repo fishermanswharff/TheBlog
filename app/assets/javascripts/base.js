@@ -34,8 +34,8 @@ ready = function() {
   }
 
   $(".article-blurb").each(function(i,blurb){
-    if ($(blurb).html().length > 250) {
-      var blurb = $(this).html().substring(0,250)+'...';
+    if ($(blurb).html().length > 100) {
+      var blurb = $(this).html().substring(0,100)+'...';
       var text = $(this).text();
       $(this).html(blurb);
     } else {}
