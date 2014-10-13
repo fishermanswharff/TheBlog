@@ -6,6 +6,7 @@ form.nav-form.inline-form {
 
   input[type="text"] {
     -webkit-appearance: none;
+    appearance: none;
     border: 0;
     height: 35px;
     background-color: #6d6e71;
@@ -15,7 +16,12 @@ form.nav-form.inline-form {
     padding: 4px;
   }
   input[type="submit"] {
-
+    border: 1px solid $white;
+    border-radius: 4px;
+    color: $black;
+    background-color: $white;
+    padding: 6px 10px 8px;
+    cursor: pointer;
   }
 
 }

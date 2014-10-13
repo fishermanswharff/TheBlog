@@ -19,7 +19,7 @@ ready = function() {
       $("p.notice.notification").animate({
         opacity: 0
       });
-    },2000);
+    },4000);
   } 
   else if($(".alert.notification").html().match(/[\w]+/) != null) {
     $("p.alert.notification").addClass('active');
@@ -27,7 +27,7 @@ ready = function() {
       $("p.alert.notification").animate({
         opacity: 0
       });
-    },2000);
+    },4000);
   }
   else {
     $("p.notice.notification").removeClass('active') ;
