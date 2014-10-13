@@ -9,23 +9,23 @@
     </div>
   </div>
   <div class="grid_4 omega sidebar">
-    <p>Authored by: <% if @user.username %><%= @user.username %><% else %><%= @user.email%><% end %></p>
-    <p><small>Created on <%= time_tag @article.created_at, pubdate: true %></small></p>
-  </div>
-  <% @article.categories.each do |category| %>
-    <a class="btn btn-info tag" href="#"><%= category.label %></a>
-  <% end %>
-  <%= render 'categories/form' %>
-</div>
-<div class="container">
-  <div class="grid_16">
-      <ul class="inline-list">
-        <% if user_signed_in? %>
-          <% if @article.user_id == current_user.id %>
-          <li><%= link_to 'Edit', edit_article_path, class: 'btn btn-primary' %></li>
-          <% end %>
-          <li><%= link_to 'Home', root_path, class: 'btn btn-primary' %></li>
+    <ul class="inline-list">
+      <% if user_signed_in? %>
+        <% if @article.user_id == current_user.id %>
+        <li><%= link_to 'Edit', edit_article_path, class: 'btn btn-primary' %></li>
         <% end %>
-      </ul>
+        <li><%= link_to 'Home', root_path, class: 'btn btn-primary' %></li>
+      <% end %>
+    </ul>
+    <p>Authored by: <% if @user.username %><%= @user.username %><% else %><%= @user.email%><% end %></p>
+    <p><small>Created on <%= time_tag @article.created_at, pubdate: true %></small>
+    <div>
+      <% @article.categories.each do |category| %>
+        <a class="btn btn-info tag" href="#"><%= category.label %></a>
+      <% end %>
+      <%= render 'categories/form' %>  
     </div>
+    
+    </p>
+  </div>
 </div>
