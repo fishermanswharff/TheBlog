@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20141012041748) do
   end
 
   add_index "categories", ["article_id"], name: "index_categories_on_article_id", using: :btree
+  add_index "categories", ["label"], name: "index_categories_on_label", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
