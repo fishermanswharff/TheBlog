@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
       # assign all the users articles into an array
       @user_articles = @user.articles.all
       
+      @article_author = @user.username ? @user.username : @user.email
       # return all the articles sorted by most recently updated
       @articles = Article.all.sort_by { |article| article.updated_at }.reverse
     end
