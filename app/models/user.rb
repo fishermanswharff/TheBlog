@@ -30,7 +30,8 @@
 class User < ActiveRecord::Base
   # :validatable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable 
-  has_many :articles
+  has_many :articles, dependent: :destroy
+  has_many :comments
   has_attached_file :avatar, 
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },
                     :bucket => 'dubya-blog-bucket',

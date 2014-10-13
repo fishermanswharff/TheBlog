@@ -12,8 +12,11 @@
 #
 
 class Article < ActiveRecord::Base
+  
   belongs_to :user
-  has_many :categories
+  has_many :categories, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  
   validates :title,presence: true
   has_attached_file :featured_image, 
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },
@@ -23,5 +26,6 @@ class Article < ActiveRecord::Base
                       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
                     }
   validates_attachment_content_type :featured_image, :content_type => /\Aimage\/.*\Z/
+  
 end
 

@@ -9,7 +9,6 @@
     </div>
   </div>
   <div class="grid_4 omega sidebar">
-    
     <ul class="inline-list">
       <% if user_signed_in? %>
         <% if @article.user_id == current_user.id %>
@@ -25,7 +24,15 @@
       <% end %>
       <%= render 'categories/form' %>  
     </div>
-    
     </p>
+  </div>
+</div>
+<div class="container">
+  <div class="grid_12">
+    <h2>Comments</h2>
+    <%= render @article.comments %>
+    <h4>
+    <h2>Add a comment:</h2>
+    <%= render 'comments/form' %>
   </div>
 </div>
