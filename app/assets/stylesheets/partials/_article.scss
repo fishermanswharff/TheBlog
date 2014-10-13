@@ -19,19 +19,26 @@
     }
 
     .slider-captions {
-      padding: 15px 0 10px 0;
+      // padding: 15px 0 10px 0;
       box-sizing: border-box;
       position: absolute;
-      top: 200px;
-      left: 100px;
+      bottom: 0;
+      // top: 200px;
+      // left: 100px;
       @include transition(all, 0.5s, ease, 0);
 
       &.show { opacity: 1 }
       .caption-content {
+        display: block;
+        float: none;
+        color: #000;
+        text-shadow: 0 0 1px #000;
+        font-size: 18px;
+
         box-sizing: border-box;
         padding: 20px;
-        border-radius: 10px;
-        background: rgba(255,255,255,0.8);
+        border-radius: 0px;
+        background: rgba(255,255,255,0.6);
       }
     }
 
