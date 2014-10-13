@@ -3,12 +3,10 @@
   z-index: $z-body;
 
   .slider-container {
-    position: relative;
+    @include defaults;
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    margin: 0 0 30px 0;
-    padding: 0;
 
     .slider-photos {
       position: absolute;
