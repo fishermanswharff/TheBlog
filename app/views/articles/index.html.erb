@@ -8,13 +8,9 @@
       </div>
     <div class="slider-nav"></div>
   </div>
-
-
   <div class="slides">
-    <!-- render each post -->
     <% @articles.each do |article| %>
       <div class="slide">
-        
           <% if article.featured_image %>
             <%= image_tag article.featured_image.url(), class: 'featured-image' %>
           <% end %>
