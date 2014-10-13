@@ -49,11 +49,21 @@
 
       a {
         display: inline-block;
-        width: 18px;
-        height: 18px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
         margin-left: 15px;
         cursor: pointer;
         background: #999;
+        font-size: 24px;
+        color:white;
+        background-color: #000;
+
+        &.selected {  
+          background-color: $black-50;
+          color: $black;
+          border: 2px solid black;
+        }
       }
     }
 

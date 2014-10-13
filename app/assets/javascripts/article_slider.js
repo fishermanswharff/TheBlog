@@ -20,7 +20,7 @@ ready = function(){
   );
 
   $('.slide').each(function(index){
-    $('.slider-nav').append('<a class="slider-nav-item" ></a>');
+    $('.slider-nav').append('<a class="slider-nav-item" >'+(index+1)+'</a>');
   });
 
   $('img.featured-image').each(function(index){
