@@ -14,17 +14,21 @@
     <!-- render each post -->
     <% @articles.each do |article| %>
       <div class="slide">
-        <% if article.featured_image %>
-          <%= image_tag article.featured_image.url(), class: 'featured-image' %>
-        <% end %>
-        <div class="grid_5 slide-caption">
-          <h2><%= link_to article.title, article_path(article) %></h2>
-          <%= content_tag(:p, article.body.gsub(/<\/?\w+((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[^'">\s]+))?)+\s*|\s*)\/?>/, ""), :class => "article-blurb") %>
-          <p>
-            <small>Last updated on: <%= localize(article.updated_at, :format => :long) %></small><br>
-            <small>Created on: <%= localize(article.created_at, :format => :long) %></small>
-          </p>
-        </div>  
+        
+          <% if article.featured_image %>
+            <%= image_tag article.featured_image.url(), class: 'featured-image' %>
+          <% end %>
+          <div class="grid_5 slide-caption">
+            <%= link_to(article_path(article)) do %>
+            <h2><%= article.title %></h2>
+            <%= content_tag(:p, article.body.gsub(/<\/?\w+((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[^'">\s]+))?)+\s*|\s*)\/?>/, ""), :class => "article-blurb") %>
+            <p>
+              <small>Last updated on: <%= localize(article.updated_at, :format => :long) %></small><br>
+              <small>Created on: <%= localize(article.created_at, :format => :long) %></small>
+            </p>
+            <% end %>
+          </div>
+        
       </div>
     <% end %>  
   </div>

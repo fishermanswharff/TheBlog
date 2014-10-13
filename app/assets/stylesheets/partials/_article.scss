@@ -19,13 +19,12 @@
     }
 
     .slider-captions {
-      // padding: 15px 0 10px 0;
       box-sizing: border-box;
       position: absolute;
       bottom: 0;
-      // top: 200px;
-      // left: 100px;
       @include transition(all, 0.5s, ease, 0);
+
+      a { text-decoration: none; color: $black; }
 
       &.show { opacity: 1 }
       .caption-content {
