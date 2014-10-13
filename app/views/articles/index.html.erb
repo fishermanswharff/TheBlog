@@ -22,7 +22,7 @@
             <%= link_to(article_path(article)) do %>
             <h2><%= article.title %></h2>
             <p>By: <% if @user.username %><%= @user.username %><% else %><%= @user.email%><% end %></p>
-            <%= content_tag(:p, article.body.gsub(/<\/?\w+((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[^'">\s]+))?)+\s*|\s*)\/?>/, ""), :class => "article-blurb") %>
+            <%= content_tag(:p, article.body.gsub(/<\/?\w+((\s+\w+(\s*=\s*(?:".*?"|'.*?'|[^'">\s]+))?)+\s*|\s*)\/?>/, " "), :class => "article-blurb") %>
             <p>
               <small>Last updated on: <%= localize(article.updated_at, :format => :long) %></small><br>
               <small>Created on: <%= localize(article.created_at, :format => :long) %></small>
