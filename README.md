@@ -1,6 +1,20 @@
 # Jason's Travelog
+(Visit the blog here)[http://json-travelog.herokuapp.com]
 
+## Specs:
 
+* User authentication with devise. 
+* Authorized actions for registered users. No creation/deletion without authorized account signin
+* Image hosting via AWS S3 server.
+* Commenting on articles, connecting comment to user account—no anonymous comments!
+* Search for your favorite categories!
+* User dashboard featuring only user's articles, and selected information about users on the site
+* WYSIWYG editor allows rich html editing
+* Full-bleed image slider on landing page
+* Articles, comments, and categories validate proper information
+* #nobootstrap
+* #nofoundation
+* #noframeworks
 
 # Rails Blog with has_many
 
