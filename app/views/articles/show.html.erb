@@ -18,14 +18,14 @@
         <li><%= link_to 'Home', root_path, class: 'btn btn-primary' %></li>
       <% end %>
     </ul>
-    <p>Authored by: 
+    <p>Authored by: <br>
       <span>
       <% if @user.avatar.url != nil %>
-        <%= image_tag @user.avatar.url() %>
+        <%= image_tag @user.avatar.url(:thumb) %>
       <% else %>
         ""
       <% end %>
-      </span>
+      </span><br>
       <% if @user.username %>
         <%= @user.username %>
       <% else %>
