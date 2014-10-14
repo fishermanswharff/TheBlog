@@ -1,3 +1,7 @@
+# Jason's Travelog
+
+
+
 # Rails Blog with has_many
 
 Make a blog. It will have posts. The posts have comments. This is for you to practice and explore. Use everything we've learned so far. Push yourself as far as you can. 
