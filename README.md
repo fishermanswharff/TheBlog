@@ -1,5 +1,5 @@
 # Jason's Travelog
-(Visit the blog here)[http://json-travelog.herokuapp.com]
+(Visit the blog here) [http://json-travelog.herokuapp.com] 
 
 ## Specs:
 
