@@ -1,5 +1,5 @@
 # Jason's Travelog
-(Visit the blog here) [http://json-travelog.herokuapp.com] 
+<a href="http://json-travelog.herokuapp.com" title="Jason's Travelog">Visit the blog here</a>
 
 ## Specs:
 
