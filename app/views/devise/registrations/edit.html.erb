@@ -8,6 +8,11 @@
     <%= f.text_field :username, autofocus: true %>
   </div>
 
+  <div>
+    <%= f.label :avatar, 'Upload a profile picture' %><br>
+    <%= f.file_field :avatar, class: 'btn btn-default btn-large' %>
+  </div>
+
   <!-- TODOS:
     insert first name 
     insert last name

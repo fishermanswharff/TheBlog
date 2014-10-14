@@ -8,6 +8,11 @@
     <%= f.text_field :username, autofocus: true %>
   </div>
 
+  <div>
+    <%= f.label :avatar, 'Upload a profile picture' %><br>
+    <%= f.file_field :avatar, class: 'btn btn-default btn-large' %>
+  </div>
+
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
 

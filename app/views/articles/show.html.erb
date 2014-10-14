@@ -18,7 +18,20 @@
         <li><%= link_to 'Home', root_path, class: 'btn btn-primary' %></li>
       <% end %>
     </ul>
-    <p>Authored by: <% if @user.username %><%= @user.username %><% else %><%= @user.email%><% end %><br><small>Created on <%= time_tag @article.created_at, pubdate: true %></small></p>
+    <p>Authored by: 
+      <span>
+      <% if @user.avatar.url != nil %>
+        <%= image_tag @user.avatar.url() %>
+      <% else %>
+        ""
+      <% end %>
+      </span>
+      <% if @user.username %>
+        <%= @user.username %>
+      <% else %>
+      <%= @user.email%>
+      <% end %><br>
+      <small>Created on <%= time_tag @article.created_at, pubdate: true %></small></p>
     <div>
       <% @article.categories.each do |category| %>
         <a class="btn btn-info tag" href="#"><%= category.label %></a>
