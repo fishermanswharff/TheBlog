@@ -14,18 +14,22 @@ ready = function() {
   });
   
   if ($(".notice.notification").html().match(/[\w]+/) != null) {
-    $("p.notice.notification").addClass('active');
+    $("p.notice.notification").addClass('active').css('display', 'block');
     setTimeout(function(){
       $("p.notice.notification").animate({
         opacity: 0
+      },1000,function(){
+        $("p.notice.notification").css('display','none');
       });
     },4000);
   } 
   else if($(".alert.notification").html().match(/[\w]+/) != null) {
-    $("p.alert.notification").addClass('active');
+    $("p.alert.notification").addClass('active').css('display', 'block');
     setTimeout(function(){
       $("p.alert.notification").animate({
         opacity: 0
+      }, 1000, function(){
+        $("p.alert.notification").css('display','none');
       });
     },4000);
   }
