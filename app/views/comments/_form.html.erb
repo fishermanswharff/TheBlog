@@ -1,9 +1,9 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
   <p>
-    <%= f.label :body %>
+    <%= f.label :body, 'No trolling allowed:' %><br>
     <%= f.text_field :body, class: 'form-control'  %>
   </p>
   <p>
-    <%= f.submit :submit, class: 'btn' %>
+    <%= f.submit :submit, class: 'btn btn-default' %>
   </p>
 <% end %>

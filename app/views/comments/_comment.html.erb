@@ -1,4 +1,4 @@
+<p><small><%= User.all.find(comment.user_id).username ? User.all.find(comment.user_id).username : User.all.find(comment.user_id).email %> says: </small></p>
 <p><%= comment.body %></p>
 <%= link_to 'Destroy Comment', [comment.article, comment], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-info btn-xs"  %>
-</ul>
 <hr>
