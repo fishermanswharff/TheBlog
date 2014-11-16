@@ -25,4 +25,4 @@ Installation
 ------
 This app requires an Amazon Web Services API key and an S3 bucket name. The AWS secret keys must be initialized in `config/environments/[environment].rb`, and also in the article model, since I'm using Thoughtbot's [Paperclip](https://github.com/thoughtbot/paperclip) gem. 
 
-You must also set your amaz  Once you fork and clone, run `rake db:create db:migrate`, fire up your rails server, and navigate to localhost:3000.
+Once you fork and clone, run `rake db:create db:migrate`, fire up your rails server, and navigate to localhost:3000. TheBlog should prompt you to create a new user.
