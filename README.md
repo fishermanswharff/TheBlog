@@ -1,5 +1,10 @@
-# Jason's Travelog
-<a href="http://json-travelog.herokuapp.com" title="Jason's Travelog">Visit the blog here</a>
+Jason's Travelog
+=============
+
+[Visit the site here](http://json-travelog.herokuapp.com)
+
+Features
+------
 
 ## Specs:
 

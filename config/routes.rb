@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :comments
     resources :categories
   end
-  
+
   get 'home/index'
   get 'categories/show'
 
