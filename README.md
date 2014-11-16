@@ -1,13 +1,9 @@
 Jason's Travelog
 =============
-
 [Visit the site here](http://json-travelog.herokuapp.com)
 
 Features
 ------
-
-## Specs:
-
 * User authentication with devise. 
 * Authorized actions for registered users. No creation/deletion without authorized account signin
 * Image hosting via AWS S3 server.
@@ -21,16 +17,12 @@ Features
 * #nofoundation
 * #noframeworks
 
-# Rails Blog with has_many
+Project Description
+------
+This project was created as a mini project in General Assembly's Web Development Immersive Program (Sept. 2014). It was scoped and developed over a weekend. 
 
-Make a blog. It will have posts. The posts have comments. This is for you to practice and explore. Use everything we've learned so far. Push yourself as far as you can. 
+Installation
+------
+This app requires an Amazon Web Services API key and an S3 bucket name. The AWS secret keys must be initialized in `config/environments/[environment].rb`, and also in the article model, since I'm using Thoughtbot's Paperclip gem. 
 
-## Additional explorations: 
-
-- Make the comments have nested comments under them, like Hacker News or Reddit
-- Use *validations* to ensure the posts and comments have the required data, and of the proper and expected type. 
-- Make it so that blog posts belong to a category, so that they can be viewed by category
-- Figure out *pagination*, so that your index page isn't potentially hundreds of blog posts, but rather pages through 5 or 10 at a time
-- Implement user authentication so that posts and comments can only be done by registered users. Use Warden or Devise for this. 
-- Use a CSS framework like Bootstrap, or create your own CSS stylesheets from scratch
-- Deploy to Heroku
+You must also set your amaz  Once you fork and clone, run `rake db:create db:migrate`, fire up your rails server, and navigate to localhost:3000.
