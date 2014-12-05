@@ -7,16 +7,15 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails', '~> 4.0.0.beta2'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'unicorn'
+# gem 'jbuilder', '~> 2.0'
+# gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'wysiwyg-rails'
 gem 'font-awesome-rails'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'devise'
-gem 'closure_tree'
-gem 'hipchat'
+# gem 'closure_tree'
+# gem 'hipchat'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -26,6 +25,7 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'unicorn'
 end
 
-gem 'annotate'
+# gem 'annotate'
