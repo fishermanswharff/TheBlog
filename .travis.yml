@@ -3,12 +3,3 @@ rvm:
   - "2.1.2"
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
-# env:
-#   - DB=postgresql
-# script:
-#   - RAILS_ENV=test bundle exec rake db:migrate --trace
-#   - bundle exec rake db:test:prepare
-#   - bundle exec rake
-# before_script:
-#   - cp config/database.travis.yml config/database.yml
-#   - psql -c 'create database Blog_test' -U postgres
