@@ -1,7 +1,11 @@
 language: ruby
 rvm:
   - "2.1.2"
+env:
+  - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rake
 before_script:
-  - psql -c 'create database Blog_test;' -U postgres
-# uncomment this line if your project needs to run something other than `rake`:
-# script: bundle exec rspec spec
+  - psql -c 'create database Blog_test' -U postgres
