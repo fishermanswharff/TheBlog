@@ -1,4 +1,4 @@
-[![Travis build status](https://travis-ci.org/bahmutov/xplain.png?branch=master)](https://travis-ci.org/bahmutov/xplain) [![Code Climate](https://codeclimate.com/github/fishermanswharff/TheBlog/badges/gpa.svg)](https://codeclimate.com/github/fishermanswharff/TheBlog)
+[![Build status][ci-image]][ci-url] [![Code Climate](https://codeclimate.com/github/fishermanswharff/TheBlog/badges/gpa.svg)](https://codeclimate.com/github/fishermanswharff/TheBlog)
 Jason's Travelog
 =============
 [Visit the site here](http://json-travelog.herokuapp.com)
@@ -27,3 +27,6 @@ Installation
 This app requires an Amazon Web Services API key and an S3 bucket name. The AWS secret keys must be initialized in `config/environments/[environment].rb`, and also in the article model, since I'm using Thoughtbot's [Paperclip](https://github.com/thoughtbot/paperclip) gem. 
 
 Once you fork and clone, run `rake db:create db:migrate`, fire up your rails server, and navigate to localhost:3000. TheBlog should prompt you to create a new user.
+
+[ci-image]: https://travis-ci.org/fishermanswharff/TheBlog.svg?branch=master
+[ci-url]: https://travis-ci.org/fishermanswharff/TheBlog
