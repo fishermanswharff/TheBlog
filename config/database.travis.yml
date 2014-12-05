@@ -1,21 +1,21 @@
-postgresql: &postgresql
-  adapter: postgresql
-  username: postgres
-  password:
-  database: Blog_<%= Rails.env %>
-  min_messages: ERROR
+# postgresql: &postgresql
+#   adapter: postgresql
+#   username: postgres
+#   password:
+#   database: Blog_<%= Rails.env %>
+#   min_messages: ERROR
 
-defaults: &defaults
-  pool: 5
-  timeout: 5000
-  host: localhost
-  <<: *<%= ENV['DB'] || "postgresql" %>
+# defaults: &defaults
+#   pool: 5
+#   timeout: 5000
+#   host: localhost
+#   <<: *<%= ENV['DB'] || "postgresql" %>
 
-development:
-  <<: *defaults
+# development:
+#   <<: *defaults
 
-test:
-  <<: *defaults
+# test:
+#   <<: *defaults
 
-production:
-  <<: *defaults
+# production:
+#   <<: *defaults
