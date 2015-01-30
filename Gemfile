@@ -14,6 +14,7 @@ gem 'font-awesome-rails'
 gem 'paperclip'
 gem 'aws-sdk'
 gem 'devise'
+gem 'newrelic_rpm'
 # gem 'closure_tree'
 # gem 'hipchat'
 

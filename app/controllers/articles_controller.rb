@@ -1,11 +1,11 @@
 class ArticlesController < ApplicationController
-  
+
   # before any new/create or edit/update, authenticate user 
   before_action :authenticate_user!, only: [:create,:new, :edit, :update]
   # before any action, set the article for show, edit, update and destroy
   before_action :set_article, only: [:show,:edit,:update,:destroy]
 
-  def index 
+  def index
     if User.all.length == 0
       redirect_to new_user_registration_path
     else
@@ -46,7 +46,7 @@ class ArticlesController < ApplicationController
     @user = User.find(@article.user_id)
   end
 
-  def edit 
+  def edit
   end
 
   def update
@@ -56,19 +56,19 @@ class ArticlesController < ApplicationController
       else
       render 'edit'
       end
-    else 
+    else
       redirect_to @article
       flash[:alert] = "You can only edit your own articles"
     end
   end
 
-  def destroy 
+  def destroy
     @article.destroy
 
     redirect_to articles_path
   end
 
-  private 
+  private
     def set_article
       @article = Article.find(params[:id])
     end
