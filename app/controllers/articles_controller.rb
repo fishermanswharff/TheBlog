@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 
-  # before any new/create or edit/update, authenticate user 
+  # before any new/create or edit/update, authenticate user
   before_action :authenticate_user!, only: [:create,:new, :edit, :update]
   # before any action, set the article for show, edit, update and destroy
   before_action :set_article, only: [:show,:edit,:update,:destroy]
@@ -9,13 +9,14 @@ class ArticlesController < ApplicationController
     if User.all.length == 0
       redirect_to new_user_registration_path
     else
+      # binding.byebug
       # find the user of the article instance
-      @user = User.find_by(params[:user_id])
-      
+      # @user = User.find_by(params[:user_id])
+
       # assign all the users articles into an array
-      @user_articles = @user.articles.all
-      
-      @article_author = @user.username ? @user.username : @user.email
+      # @user_articles = @user.articles.all
+
+      # @article_author = @user.username ? @user.username : @user.email
       # return all the articles sorted by most recently updated
       @articles = Article.all.sort_by { |article| article.updated_at }.reverse
     end
